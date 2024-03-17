@@ -1,27 +1,50 @@
-# React + TypeScript + Vite
+# Сайт для кафедры МОВС
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## О проекте
 
-Currently, two official plugins are available:
+Сайт для кафедры МОВС предназначен для предоставления информации о кафедре, ее учебных программах, научных исследованиях, мероприятиях и контактных данных. Сайт разработан с использованием современных технологий и предоставляет удобный интерфейс для пользователей и администраторов.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Стек технологий
 
-## Expanding the ESLint configuration
+- **React**: Используется для создания интерактивного пользовательского интерфейса. React позволяет эффективно обновлять и рендерить правильные компоненты при изменении данных.
+- **TypeScript (ts)**: TypeScript добавляет строгую типизацию в проект, что улучшает поддержку кода, облегчает его отладку и увеличивает его масштабируемость.
+- **TailwindCSS**: Фреймворк CSS, используемый для быстрой и удобной стилизации веб-страниц. TailwindCSS предоставляет множество утилитарных классов, которые упрощают процесс разработки и поддержки стилей.
+- **Vite**: Инструмент сборки, оптимизированный для проектов на основе модулей JavaScript. Vite обеспечивает быструю перезагрузку во время разработки и оптимизированную сборку для продакшена.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Начало работы
 
-- Configure the top-level `parserOptions` property like this:
+Для запуска проекта вам понадобится Node.js. Убедитесь, что он установлен на вашем компьютере.
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+### Клонирование репозитория
+
+```bash
+git clone https://example.com/your-repo.git
+cd your-repo
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Установка зависимостей
+
+Перед запуском проекта необходимо установить все зависимости. Это можно сделать с помощью следующей команды:
+
+```bash
+npm install
+```
+
+## Запуск проекта
+
+После установки всех зависимостей проект можно запустить в режиме разработки. Для этого используйте команду:
+
+```bash
+npm run dev
+```
+Команда запустит локальный сервер для разработки. После запуска сайт будет доступен по адресу http://localhost:5173/.
+
+## Сборка проекта
+
+Для сборки проекта в продакшн используйте следующую команду:
+
+```bash
+npm run build
+```
+
+Команда создаст оптимизированную сборку вашего проекта. Готовый к развертыванию сайт будет находиться в папке dist.
