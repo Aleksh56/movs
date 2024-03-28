@@ -19,10 +19,10 @@ const FindProgram = () => {
           ПГНИУ можно ознакомиться на сайте подговительных курсов.
         </p>
         <div className="mb-4 flex flex-wrap">
-          <a href="#" className="mr-4 mb-2 underline">
-            Образовательная программа
-          </a>
-          <a href="#" className="mr-4 mb-2 underline">
+          <a
+            href="http://www.psu.ru/files/docs/obrazovanie/bachelors/2024/up/02-03-02-fit-f.pdf"
+            className="mr-4 mb-2 underline"
+          >
             Примерный учебный план
           </a>
         </div>

@@ -1,23 +1,33 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { newsData } from "./data/NewsData";
+import Modal from "./components/Modal";
 
 const News = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [currentNews, setCurrentNews] = useState({});
+  const [currentNews, setCurrentNews] = useState(null);
 
   const openModal = (news) => {
     setCurrentNews(news);
     setIsModalOpen(true);
   };
 
-  const closeModal = (e) => {
-    e.stopPropagation();
+  const closeModal = () => {
     setIsModalOpen(false);
   };
 
-  const stopPropagation = (e) => {
-    e.stopPropagation();
-  };
+  useEffect(() => {
+    const handleEsc = (event) => {
+      if (event.key === "Escape") {
+        closeModal();
+      }
+    };
+
+    window.addEventListener("keydown", handleEsc);
+
+    return () => {
+      window.removeEventListener("keydown", handleEsc);
+    };
+  }, []);
 
   return (
     <div className="my-8">
@@ -52,34 +62,7 @@ const News = () => {
           </div>
         ))}
       </div>
-      {isModalOpen && (
-        <div
-          className="fixed inset-0 bg-black bg-opacity-50 z-50 flex justify-center items-center"
-          onClick={(e) => closeModal(e)}
-        >
-          <div
-            className="bg-white p-6 rounded-lg shadow-lg max-w-lg w-full overflow-y-auto max-h-[80vh]"
-            onClick={stopPropagation}
-          >
-            <h3 className="text-lg font-bold mb-2">{currentNews.title}</h3>
-            <img
-              src={currentNews.image}
-              alt={currentNews.title}
-              className="w-full h-48 object-cover mb-4 rounded-lg"
-            />
-            <p className="text-gray-700 mb-4">{currentNews.description}</p>
-            <span className="text-gray-500 text-sm">{currentNews.date}</span>
-            <div className="mt-4 text-right">
-              <button
-                onClick={(e) => closeModal(e)}
-                className="py-2 px-4 bg-blue-500 text-white rounded hover:bg-blue-700"
-              >
-                Close
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
+      {isModalOpen && <Modal news={currentNews} onClose={closeModal} />}
     </div>
   );
 };

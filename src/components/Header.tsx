@@ -38,22 +38,13 @@ const Header = () => {
         </Link>
         <div className="hidden md:flex space-x-4">
           <nav className="space-x-4">
-            <Link to="/link4" className="text-white hover:text-gray-900">
+            <Link to="/applicants" className="text-white hover:text-gray-900">
               Абитурентам
             </Link>
-            <Link to="/link5" className="text-white hover:text-gray-900">
-              Студентам
-            </Link>
-            <Link to="/link1" className="text-white hover:text-gray-900">
-              Деканат
-            </Link>
-            <Link to="/link3" className="text-white hover:text-gray-900">
-              Преподаватели
-            </Link>
-            <Link to="/link2" className="text-white hover:text-gray-900">
+            <Link to="/contacts" className="text-white hover:text-gray-900">
               Контакты
             </Link>
-            <Link to="/link6" className="text-white hover:text-gray-900">
+            <Link to="/about" className="text-white hover:text-gray-900">
               О кафедре
             </Link>
           </nav>
@@ -66,24 +57,9 @@ const Header = () => {
         {isBurgerMenuOpen && (
           <div className="absolute top-full right-0 bg-white w-[30%] md:w-auto md:hidden">
             <nav className="flex flex-col items-start space-y-2 p-4">
-              <Link to="/link4" onClick={toggleBurgerMenu}>
-                Абитурентам
-              </Link>
-              <Link to="/link5" onClick={toggleBurgerMenu}>
-                Студентам
-              </Link>
-              <Link to="/link1" onClick={toggleBurgerMenu}>
-                Деканат
-              </Link>
-              <Link to="/link3" onClick={toggleBurgerMenu}>
-                Преподаватели
-              </Link>
-              <Link to="/link2" onClick={toggleBurgerMenu}>
-                Контакты
-              </Link>
-              <Link to="/link6" onClick={toggleBurgerMenu}>
-                О кафедре
-              </Link>
+              <Link to="/applicants">Абитурентам</Link>
+              <Link to="/contacts">Контакты</Link>
+              <Link to="/about">О кафедре</Link>
             </nav>
           </div>
         )}
